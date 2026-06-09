@@ -1,5 +1,6 @@
 package com.example.buscard.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,5 +26,6 @@ public class Trip {
 
     @ManyToOne
     @JoinColumn(name = "card_id")
+    @JsonIgnore
     private Card card;
 }

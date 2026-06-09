@@ -22,6 +22,7 @@ public class Card {
     private Long balance;
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "card")
+
+    @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Trip> trips;
 }
